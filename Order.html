@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <body style="background-color: #0066ff">
+        <script>
+            function processOrder(){
+                var items = document.getElementsByName('option');
+				var selectedItems="";
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox' && items[i].checked==true)
+						selectedItems+=items[i].value+"\n";
+                    else if(items[i].type=='radio' && items[i].checked)
+						selectedItems+=items[i].value+"\n";
+				}
+				alert(selectedItems);
+            }
+        </script>
+        <style>
+            h2{
+                color: white;
+                border-bottom: 2px solid #0066ff;
+            }
+            h4{
+                color: white;
+            }
+            span{
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+        <table bordercolor=red colspan="2" align="center" cellspacing="0"  style="background: url('pizza.jpg'); background-repeat: no-repeat; background-size: 100% 100%; filter: brightness(80%)">
+            <tr>
+                <th><img src="Dominos.PNG">
+                </th>
+            </tr>
+            <tr>
+                <td bordercolor=red colspan="2" style=" padding-left: 200px; padding-right: 200px; padding-top: 50px">
+                    <h2 style="padding-left: 25px">Select an Option:</h2> 
+                    <input type="checkbox" name="option" value="Pickup"><span>Pickup</span>
+                    <input type="checkbox" name="option" value="Delivery"><span>Delivery</span><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-left: 200px; padding-right: 200px; padding-top: 20px">
+                    <h2 style="padding-left: 25px">Pizza Style: </h2> 
+                    <input type="checkbox" name="option" value="Thin Crust"><span>Thin Crust</span><br> 
+                    <input type="checkbox" name="option" value="Medium Crust"><span>Medium Crust</span><br>
+                    <input type="checkbox" name="option" value="Pan Crust"><span>Pan Crust</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-left: 200px; padding-right: 200px; padding-top: 20px">
+                    <h2 style="padding-left: 25px">Pizza Size: </h2> 
+                    <input type="radio" name="option" value="Small Pizza"><span>Small</span><br> 
+                    <input type="radio" name="option" value="Medium Pizza"><span>Medium</span><br>
+                    <input type="radio" name="option" value="Large Pizza"><span>Large</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-left: 200px; padding-right: 200px; padding-top: 20px">
+                    <h2 style="padding-left: 25px">Pizza Toppings: </h2> 
+                    <h4 style="padding-left: 25px">Meats: </h4> 
+                    <input type="checkbox" name="option" value="Pepperoni"><span>Pepperoni</span>
+                    <input type="checkbox" name="option" value="Sausage"><span>Sausage</span>
+                    <input type="checkbox" name="option" value="Ham"><span>Ham</span><br>
+                    <input type="checkbox" name="option" value="Pineapples"><span>Bacon</span>
+                    <input type="checkbox" name="option" value="Pineapples"><span>Chicken</span><br>
+                    <h4 style="padding-left: 25px">Other: </h4> 
+                    <input type="checkbox" name="option" value="Onions"><span>Onions</span>
+                    <input type="checkbox" name="option" value="Mushrooms"><span>Mushrooms</span>
+                    <input type="checkbox" name="option" value="Pineapples"><span>Pineapple</span><br>
+                    <input type="checkbox" name="option" value="Onions"><span>Olives</span>
+                    <input type="checkbox" name="option" value="Mushrooms"><span>Peppers</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style=" padding-left: 225px; padding-right: 200px; padding-top: 30px; padding-bottom: 20px">
+                    <input type="submit" value="Submit Order" onclick='processOrder()'/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
